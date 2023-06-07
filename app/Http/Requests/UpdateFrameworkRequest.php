@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 
 class UpdateFrameworkRequest extends FormRequest
 {
@@ -22,7 +23,9 @@ class UpdateFrameworkRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'name' =>  [
+                Rule::unique('frameworks')->ignore($this->framework), 'required', 'max:255', 'min:2'
+            ],
         ];
     }
 }

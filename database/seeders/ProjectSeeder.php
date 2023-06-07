@@ -21,7 +21,7 @@ class ProjectSeeder extends Seeder
             $newProject->name = $project['name'];
             $newProject->gitUrl = $project['gitUrl'];
             $newProject->description = $project['description'];
-            $newProject->framework_id = (array_search($project[$project->framework], $frameworks) + 1);
+            $newProject->framework_id = (array_search($project['framework'], $frameworks) + 1);
             //$newProject->framework = $project['framework'];
             $newProject->tecnologies = $project['tecnologies'];
             $newProject->slug = Str::slug($project['name'], '-');

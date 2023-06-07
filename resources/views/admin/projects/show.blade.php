@@ -402,7 +402,7 @@ Buon divertimento</textarea>
                     <textarea>
 Project name: {{$project->name}}
 
-Project framework: {{$project->framework}}
+Project framework: {{$project->framework->name}}
 
 Project tecnologies: {{$project->tecnologies}}
 

@@ -1,10 +1,13 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
 use App\Models\Framework;
 use App\Http\Requests\StoreFrameworkRequest;
 use App\Http\Requests\UpdateFrameworkRequest;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Str;
+
 
 class FrameworkController extends Controller
 {

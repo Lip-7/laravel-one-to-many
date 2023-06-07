@@ -9,7 +9,7 @@
             @foreach ($projects as $project)
                 <div class="col-lg-4 position-relative">
                     <img class=""
-                        src="/images/{{$project->framework . '.png'}}"
+                        src="/images/{{$project->framework->name . '.png'}}"
                         alt="{{$project->framework}}" width="140" height="140">
                     <h2>{{ $project->name }}</h2>
                     <p>{{ $project->description }}</p>

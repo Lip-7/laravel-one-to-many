@@ -22,7 +22,9 @@ class StoreFrameworkRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'name' =>  [
+                'unique:frameworks', 'required', 'max:255', 'min:2'
+            ],
         ];
     }
 }
