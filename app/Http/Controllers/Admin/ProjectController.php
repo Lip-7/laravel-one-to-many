@@ -37,7 +37,6 @@ class ProjectController extends Controller
         $data = $request->validated();
         $slug = Str::slug($request->name, '-');
         $data['slug'] = $slug;
-        dd($data);
         $project = Project::create($data);
         return redirect()->route('admin.projects.show', compact('project'));
     }

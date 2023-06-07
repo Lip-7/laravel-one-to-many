@@ -31,9 +31,16 @@
                 </div>
                 <div class="col-12 col-lg-6">
                     <div class="mb-3">
-                        <label for="framework" class="form-label text-capitalize">framework</label>
-                        <input type="text"  value="{{old('framework', $project->framework)}}" placeholder="es. '$19.99'" name="framework" class="form-control @error('framework') is-invalid @enderror" id="framework" aria-describedby="frameworkHelp" required>
-                        @error('framework')
+                        <label for="framework_id" class="form-label text-capitalize">framework</label>
+                        <select name="framework_id" id="framework_id" class="form-control @error('framework_id') is-invalid @enderror" required>
+                            <option value="">Choose a framework</option>
+                            @foreach ($frameworks as $fw)
+                                <option value="{{$fw->id}}" {{$fw->id == old('framework_id', $project->framework_id) ? 'selected' : '' }}>
+                                    {{$fw->name}}
+                                </option>
+                            @endforeach
+                        </select>
+                        @error('framework_id')
                             <div class="invalid-feedback">
                                 {{ $message }}
                             </div>

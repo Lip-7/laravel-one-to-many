@@ -27,7 +27,7 @@ class UpdateProjectRequest extends FormRequest
                 Rule::unique('projects')->ignore($this->project), 'required', 'max:150', 'min:3'
             ],
             'gitUrl' => 'required|max:255|min:3',
-            'framework' => 'required|max:255|min:3',
+            'framework_id' => 'required',
             'tecnologies' => 'required|max:255|min:3',
             'description' => 'required|min:10',
         ];
